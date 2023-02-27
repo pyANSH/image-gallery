@@ -5,6 +5,7 @@ import { setSearch } from "../../features/reducer/searchSlice/SearchSlice";
 import ThemeToggle from "./ThemeToggle";
 
 function Header() {
+//   coode author:pyansh
   const searchValue = useSelector((state: any) => state.search.search);
   const dispatch: any = useDispatch();
   const handleChange = (e: any) => {
