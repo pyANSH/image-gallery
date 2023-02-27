@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { searchThunk } from "../thunk/searchThunk";
 
 const initialState = {
-  unsplash: [],
+  unsplashResult: [],
   queryStatus: "idle",
 };
 
@@ -12,17 +12,17 @@ export const unsplashSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(searchThunk.pending, (state: any) => {
-      state.unsplash = [];
+      state.unsplashResult = [];
       state.queryStatus = "loading";
     });
 
-    builder.addCase(searchThunk.fulfilled, (state: any, action) => {
-      state.unsplash = action.payload;
+    builder.addCase(searchThunk.fulfilled, (state: any, action: any) => {
+      state.unsplashResult = action.payload.response.results;
       state.queryStatus = "success";
     });
 
     builder.addCase(searchThunk.rejected, (state: any) => {
-      state.unsplash = [];
+      state.unsplashResult = [];
       state.queryStatus = "failed";
     });
   },

@@ -1,6 +1,8 @@
 import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setSearch } from "../../features/reducer/searchSlice/SearchSlice";
+import { searchThunk } from "../../features/thunk/searchThunk";
 import ThemeToggle from "./ThemeToggle";
 
 function Header() {
@@ -8,6 +10,10 @@ function Header() {
   const dispatch: any = useDispatch();
   const handleChange = (e: any) => {
     dispatch(setSearch(e.target.value));
+  };
+  const navigate = useNavigate();
+  const handleclick = () => {
+    navigate("/search/q=" + searchValue);
   };
 
   return (
@@ -19,6 +25,11 @@ function Header() {
           <input
             value={searchValue}
             onChange={handleChange}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleclick();
+              }
+            }}
             className="inputHeader"
             type="text"
             placeholder="Search Images Here"
