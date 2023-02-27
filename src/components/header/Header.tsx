@@ -18,7 +18,14 @@ function Header() {
 
   return (
     <div className="headerBody">
-      <div className="Title">Image Gallery</div>
+      <div
+        className="Title"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Image Gallery
+      </div>
       <div className="MiddleGround">
         <div className="InputBody">
           <BsSearch />
