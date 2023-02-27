@@ -5,7 +5,7 @@ const initialState = {
   unsplashResult: [],
   queryStatus: "idle",
 };
-
+//   code author:pyansh
 export const unsplashSlice = createSlice({
   name: "unsplash",
   initialState,

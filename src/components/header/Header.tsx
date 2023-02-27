@@ -5,7 +5,6 @@ import { setSearch } from "../../features/reducer/searchSlice/SearchSlice";
 import ThemeToggle from "./ThemeToggle";
 
 function Header() {
-//   coode author:pyansh
   const searchValue = useSelector((state: any) => state.search.search);
   const dispatch: any = useDispatch();
   const handleChange = (e: any) => {
@@ -15,7 +14,7 @@ function Header() {
   const handleclick = () => {
     navigate("/search/q=" + searchValue);
   };
-
+  //   code author:pyansh
   return (
     <div className="headerBody">
       <div

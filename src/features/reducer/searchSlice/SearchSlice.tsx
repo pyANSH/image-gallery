@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   search: "",
 };
-
+//   code author:pyansh
 export const searchSlice = createSlice({
   name: "search",
   initialState,

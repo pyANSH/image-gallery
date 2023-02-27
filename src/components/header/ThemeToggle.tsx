@@ -15,7 +15,7 @@ export default function ThemeToggle() {
     const black = styles.getPropertyValue("--black");
     const white = styles.getPropertyValue("--white");
     const docEl = document.documentElement;
-
+    // code author:pyansh
     if (isDarkEnabled) {
       docEl.style.setProperty("--background", black);
       docEl.style.setProperty("--foreground", white);

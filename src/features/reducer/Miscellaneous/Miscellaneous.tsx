@@ -5,7 +5,7 @@ const initialState = {
   isPopup: false,
   res: {},
 };
-
+// //   code author:pyansh
 const miscellaneousSlice = createSlice({
   name: "miscellaneous",
   initialState,

@@ -3,8 +3,8 @@ import { BiLike } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { togglePopup } from "../../features/reducer/Miscellaneous/Miscellaneous";
 function ImgCard({ ImgUrl, profileUrl, name, tag, likeCount, res }: any) {
-  const { isPopup } = useSelector((state: any) => state.miscellaneous);
   const dispatch: any = useDispatch();
+  //   code author:pyansh
   return (
     <div
       className={`imgCardBody `}

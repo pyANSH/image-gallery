@@ -26,7 +26,7 @@ function Suggestion() {
       setSuggestions(suggest);
     }
   }, [query]);
-
+  //   code author:pyansh
   return (
     <div className="s_btn_container">
       {suggestions.slice(0, 6).map((s: string) => {

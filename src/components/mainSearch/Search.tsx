@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setSearch } from "../../features/reducer/searchSlice/SearchSlice";
 
 function Search() {
+  //   code author:pyansh
   const searchVal = useSelector((state: any) => state.search.search);
   const dispatch: any = useDispatch();
   const navigate = useNavigate();

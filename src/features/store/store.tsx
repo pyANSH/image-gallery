@@ -9,7 +9,7 @@ export const store = configureStore({
     search: SearchSlice,
     unsplash: unsplashSlice,
   },
-
+  //   code author:pyansh
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
