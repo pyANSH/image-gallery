@@ -1,6 +1,14 @@
 import React from "react";
 import { BiLike } from "react-icons/bi";
-function ImgCard({ width, height, ImgUrl, profileUrl }: any) {
+function ImgCard({
+  width,
+  height,
+  ImgUrl,
+  profileUrl,
+  name,
+  tag,
+  likeCount,
+}: any) {
   return (
     <div
       className="imgCardBody"
@@ -11,13 +19,13 @@ function ImgCard({ width, height, ImgUrl, profileUrl }: any) {
         <div className="ImgCardProfile">
           <img src={profileUrl} />
           <div className="ImgProfileDetails">
-            <h3>John Doe</h3>
-            <p>@john</p>
+            <h3>{name}</h3>
+            <p>{tag}</p>
           </div>
         </div>
         <div className="ImgCardLikes">
           <BiLike />
-          <p>1.2k</p>
+          <p>{likeCount}</p>
         </div>
       </div>
     </div>
