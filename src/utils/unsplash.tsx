@@ -1,7 +1,7 @@
 import { createApi } from "unsplash-js";
-
+import.meta.env.MODE;
 const unsplash = createApi({
-  accessKey: "9MBBOE7YIiIa_z3GDBm-HObAf8SIwt7-UxtHpmd-34U",
+  accessKey: import.meta.env.VITE_APP_API_KEY!,
   headers: { "X-Custom-Header": "foo" },
 });
 
