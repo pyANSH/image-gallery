@@ -1,8 +1,17 @@
 import React from "react";
 import { BiLike } from "react-icons/bi";
-function ImgCard({ ImgUrl, profileUrl, name, tag, likeCount }: any) {
+import { useDispatch, useSelector } from "react-redux";
+import { togglePopup } from "../../features/reducer/Miscellaneous/Miscellaneous";
+function ImgCard({ ImgUrl, profileUrl, name, tag, likeCount, res }: any) {
+  const { isPopup } = useSelector((state: any) => state.miscellaneous);
+  const dispatch: any = useDispatch();
   return (
-    <div className={`imgCardBody `}>
+    <div
+      className={`imgCardBody `}
+      onClick={() => {
+        dispatch(togglePopup({ isPopup: true, res: res }));
+      }}
+    >
       <img src={ImgUrl} alt="" />
       <div className="ImgCardDetails">
         <div className="ImgCardProfile">

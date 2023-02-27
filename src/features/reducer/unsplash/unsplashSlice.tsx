@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { searchThunk } from "../thunk/searchThunk";
+import { searchThunk } from "../../thunk/searchThunk";
 
 const initialState = {
   unsplashResult: [],

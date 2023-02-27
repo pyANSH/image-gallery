@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isDark: false,
+  isPopup: false,
+  res: {},
 };
 
 const miscellaneousSlice = createSlice({
@@ -11,8 +13,12 @@ const miscellaneousSlice = createSlice({
     toggleDarkMode(state, action) {
       state.isDark = action.payload;
     },
+    togglePopup(state, action) {
+      state.isPopup = action.payload.isPopup;
+      state.res = action.payload.res;
+    },
   },
 });
 
-export const { toggleDarkMode } = miscellaneousSlice.actions;
+export const { toggleDarkMode, togglePopup } = miscellaneousSlice.actions;
 export default miscellaneousSlice.reducer;

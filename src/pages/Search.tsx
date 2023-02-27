@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Header from "../components/header/Header";
 import ImgCard from "../components/imgCard/ImgCard";
+import Popup from "../components/popup/Popoup";
 import Suggestion from "../components/searchSuggestions/Sugesstion";
 import { searchThunk } from "../features/thunk/searchThunk";
 
@@ -38,6 +39,7 @@ function Search() {
                 name={item.user.name}
                 tag={item.user.username}
                 likeCount={item.likes}
+                res={item}
               />
             );
           })
@@ -46,6 +48,7 @@ function Search() {
         ) : (
           <h1 className="h-404">Not Found</h1>
         )}
+        <Popup />;
       </div>
     </>
   );
