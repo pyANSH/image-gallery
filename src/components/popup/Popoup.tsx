@@ -44,12 +44,19 @@ function Popoup() {
                     Info
                   </button>
                 </div>
-                <span className="download_btn">Download Image</span>
+                <span onClick={() => {}} className="download_btn">
+                  Download Image
+                </span>
               </div>
             </div>
             <div className="details">
               <div className="profileDetails">
-                <div className="profile">
+                <div
+                  className="profile"
+                  onClick={() => {
+                    window.open(res.user.links.html);
+                  }}
+                >
                   <div className="profile_img">
                     <img src={res.user.profile_image.medium} alt="" />
                   </div>
@@ -61,16 +68,28 @@ function Popoup() {
                 <div className="social">
                   <button>
                     {res.user.instagram_username && (
-                      <>
+                      <div
+                        onClick={() => {
+                          window.open(
+                            `https://www.instagram.com/${res.user.instagram_username}`
+                          );
+                        }}
+                      >
                         <AiOutlineInstagram /> /{res.user.instagram_username}
-                      </>
+                      </div>
                     )}
                   </button>
                   <button>
                     {res.user.twitter_user_name && (
-                      <>
+                      <div
+                        onClick={() => {
+                          window.open(
+                            `https://www.instagram.com/${res.user.twitter_username}`
+                          );
+                        }}
+                      >
                         <AiOutlineTwitter /> /{res.user.twitter_username}
-                      </>
+                      </div>
                     )}
                   </button>
                 </div>

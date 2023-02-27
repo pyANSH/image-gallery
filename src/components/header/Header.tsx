@@ -2,7 +2,6 @@ import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSearch } from "../../features/reducer/searchSlice/SearchSlice";
-import { searchThunk } from "../../features/thunk/searchThunk";
 import ThemeToggle from "./ThemeToggle";
 
 function Header() {
@@ -27,7 +26,7 @@ function Header() {
         Image Gallery
       </div>
       <div className="MiddleGround">
-        <div className="InputBody">
+        <div className="InputBody res_Input">
           <BsSearch />
           <input
             value={searchValue}
@@ -50,7 +49,7 @@ function Header() {
       </div>
       <nav className="header_nav">
         <div className="NavItem">Dark Mode</div>
-        <div className="NavItem">
+        <div className="darkToggle">
           <ThemeToggle />
         </div>
       </nav>

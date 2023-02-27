@@ -299,6 +299,7 @@ html::before {
   gap: 1rem;
   width: 90%;
   margin: 1rem auto;
+  flex-wrap: wrap;
 }
 
 .s_btn {
@@ -327,6 +328,7 @@ html::before {
 }
 
 .popup {
+
   position: fixed;
   top: 0;
   left: 0;
@@ -337,9 +339,11 @@ html::before {
   justify-content: center;
   align-items: center;
   z-index: 99999999;
+  transition: 0.5 ease-in-out;
 }
 
 .popup_inner {
+  overflow-y: auto;
   position: fixed;
   top: 2;
   width: 96%;
@@ -356,6 +360,7 @@ html::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
 }
 
 .close_btn {
@@ -370,7 +375,7 @@ html::before {
   background: var(--background);
   border-radius: 50%;
   outline: none;
-  border: none;
+
   z-index: 9999;
 }
 
@@ -530,4 +535,94 @@ html::before {
 
 .none {
   overflow: none;
+}
+
+@media screen and (max-width: 1155px) {
+
+  .Title,
+  .NavItem {
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 1009px) {
+  .res_Input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .NavItem {
+    display: none;
+  }
+
+  .Title {
+    font-size: 14px;
+  }
+
+  .darkToggle {
+    height: 20px;
+    width: 20px;
+  }
+
+  .toggle {
+    height: 15px;
+    width: 30px;
+  }
+
+  .toggle::before {
+    height: 10px;
+    width: 11px;
+  }
+
+  .headerBody {
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .searchBody h1 {
+    font-size: 14px;
+  }
+
+  .searchBody p {
+    font-size: 8px;
+  }
+
+  .searchInput {
+    width: 95%;
+  }
+
+  .toggle.enabled::before {
+    transform: translateX(15px);
+  }
+
+  .gallery {
+    justify-content: space-around;
+  }
+
+  .popup_inner {
+    width: 100%;
+    height: 97%;
+    border-radius: 0;
+    bottom: 0%;
+  }
+
+  .pop_img_inner {
+    flex-wrap: wrap;
+    left: 12%;
+  }
+
+  .pop_img {
+    background-size: contain;
+    background-position: center;
+    height: 70%;
+  }
+
+  .details {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
