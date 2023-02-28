@@ -345,6 +345,7 @@ html::before {
 
 .popup_inner {
   overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   top: 2;
   width: 96%;
@@ -531,7 +532,7 @@ html::before {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .none {
@@ -553,7 +554,20 @@ html::before {
   }
 }
 
+.share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  background: var(--background);
+}
+
 @media screen and (max-width: 559px) {
+
   .NavItem {
     display: none;
   }

@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { togglePopup } from "../../features/reducer/Miscellaneous/Miscellaneous";
+import {
+  togglePopup,
+  toggleShare,
+} from "../../features/reducer/Miscellaneous/Miscellaneous";
 import {
   AiOutlineClose,
   AiOutlineInfoCircle,
@@ -10,8 +13,11 @@ import {
   AiOutlineShareAlt,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import Share from "../Share/Share";
 function Popoup() {
-  const { isPopup, res } = useSelector((state: any) => state.miscellaneous);
+  const { isPopup, res, isShare } = useSelector(
+    (state: any) => state.miscellaneous
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   React.useEffect(() => {}, [res, isPopup]);
@@ -35,16 +41,32 @@ function Popoup() {
             >
               <div className="pop_img_inner">
                 <div>
-                  <button>
+                  <button
+                    onClick={() => {
+                      dispatch(toggleShare(!isShare));
+                    }}
+                  >
                     <AiOutlineShareAlt />
                     Share
                   </button>
-                  <button>
+                  <button
+                    onClick={() => {
+                      window.open(res.urls.full);
+                    }}
+                  >
                     <AiOutlineInfoCircle />
                     Info
                   </button>
+                  <Share Link={res.links.html} />
                 </div>
-                <span onClick={() => {}} className="download_btn">
+                <span
+                  onClick={() =>
+                    window.open(
+                      `https://unsplash.com/photos/${res.id}/download?force=true`
+                    )
+                  }
+                  className="download_btn"
+                >
                   Download Image
                 </span>
               </div>
