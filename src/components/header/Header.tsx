@@ -42,9 +42,9 @@ function Header() {
           />
         </div>
         <nav className="header_nav">
-          <div className="NavItem">Explore </div>
-          <div className="NavItem">Collections</div>
-          <div className="NavItem">Community</div>
+          <div className="NavItem"> </div>
+          <div className="NavItem"></div>
+          <div className="NavItem"></div>
         </nav>
       </div>
       <nav className="header_nav">
